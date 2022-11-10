@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+
+<div class="container">
+<form action= "{% url 'patient_records:patient_record_list' %}" method = "post">
+    {% csrf_token %}
+    <div class="input-group input-group-outline my-3">
+        <label for="aadharid" class="form-label-inline w-30">Enter Aadhar Number:</label>
+        <input id="aadharid" class="form-control" type="number" name="aadharid" maxlength="12" pattern=".{12}" required>
+    </div>
+    <div class="input-group input-group-outline my-3">
+        <label for="bdate" class="form-label-inline w-30">Enter Date Of Birth:</label>
+        <input id="bdate" class="form-control" type="date" name="bdate" required>
+    </div>
+    <div class="text-center">
+        <button type="submit" value="save" class="btn bg-gradient-info w-100 my-4 mb-2 mx-1">See Records</button>
+    </div>
+</form>
+</div>
+{% endblock %}

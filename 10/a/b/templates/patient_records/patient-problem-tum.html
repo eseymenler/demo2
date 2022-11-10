@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}problem-list-view{% endblock title %}
+{% block content %}
+
+<div class="container">
+Hasta Adı:  {{ patient.name }}</br>
+Hastanın Sağlık Problemi:  {{ prob }}<br>
+Hastanın Boyu:  {{ vital }}<br>
+Hastanın Sigara Kullanım Durumu:  {{ social }} <br></div>
+<br>
+<br>
+
+
+
+
+
+<div class="container">
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+<tr>
+<th class="tg-0lax">Hasta Adı:</th>
+<th class="tg-0lax">{{ patient.name }}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tg-0lax">Hastanın Sağlık Problemi:</td>
+<td class="tg-0lax">{% for y in prob %}<br>    <br>        {{ y.problem }}<br>                            <br>    <br>{% endfor %}</td>
+</tr>
+<tr>
+<td class="tg-0lax">Hastanın Boyu:</td>
+<td class="tg-0lax">{% for x in vital %}<br>    <br>        {{ x.height }}<br>                            <br>    <br>{% endfor %}</td>
+</tr>
+<tr>
+<td class="tg-0lax">Sigara Kullanımı:</td>
+<td class="tg-0lax">{% for item in social %}<br>    <br><br>        {{ item.tobacco_smoking_status }}<br>                            <br>   <br>{% endfor %}</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<br>
+<br>
+
+{% endblock %}

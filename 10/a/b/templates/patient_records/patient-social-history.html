@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}patient-social-history-view{% endblock title %}
+{% block content %}
+
+<div class="container my-2 p-2">
+    <h3 class="text-center my-4">Social History <a href="/patient_records/patient-social-history-edit/{{ patient.aadhaarId }}"><i class="fas fa-edit"></i></a></h3>
+    <div class="col-md-12 search-table-col m-4">
+        <div class="table-responsive table table-hover table-bordered results">
+            <table class="table bg-gradient-info text-white table-hover table-bordered">
+                <tbody>
+                    <tr>
+                        <th scope="row" class="col-lg-2 text-center">Tobacco Smoking Status</th>
+                        <td class="text-center col-lg-3">{{form.tobacco_smoking_status}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="col-lg-2 text-center">Alcohol Consumption Status</th>
+                        <td class="text-center col-lg-3">{{form.alcohol_consumption_status}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="col-lg-2 text-center">Alcohol Consumption Unit</th>
+                        <td class="text-center col-lg-3">{{form.alcohol_consumption_unit}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="col-lg-2 text-center">Alcohol Consumption Frequency</th>
+                        <td class="text-center col-lg-3">{{form.alcohol_consumption_frequency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

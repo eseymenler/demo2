@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="container my-2 p-2">
+    <h3 class="text-center my-4">Vital Signs <a href="/patient-vital-sign-edit/{{ patient.aadhaarId }}"><i class="fas fa-edit"></i></a></h3>
+    <div class="col-md-12 search-table-col m-4">
+        <div class="table-responsive table table-hover table-bordered results">
+            <table class="table bg-gradient-info text-black table-hover table-bordered">
+                <tbody>
+                    <tr>
+                        <th scope="row" class="col-lg-2 text-center">Body Weight</th>
+                        <td class="text-center col-lg-3">{{form.body_weight}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="col-lg-2 text-center">Height</th>
+                        <td class="text-center col-lg-3">{{form.height}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="col-lg-2 text-center">Respiration Rate</th>
+                        <td class="text-center col-lg-3">{{form.respiration_rate}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="col-lg-2 text-center">Pulse Rate</th>
+                        <td class="text-center col-lg-3">{{form.pulse_rate}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="col-lg-2 text-center">Body Temperatur</th>
+                        <td class="text-center col-lg-3">{{form.body_temperature}}</td>
+                    </tr><tr>
+                        <th scope="row" class="col-lg-2 text-center">Head Circumference</th>
+                        <td class="text-center col-lg-3">{{form.head_circumference}}</td>
+                    </tr><tr>
+                        <th scope="row" class="col-lg-2 text-center">Pulse Oximetry</th>
+                        <td class="text-center col-lg-3">{{form.pulse_oximetry}}</td>
+                    </tr><tr>
+                        <th scope="row" class="col-lg-2 text-center">Body Mass Index</th>
+                        <td class="text-center col-lg-3">{{form.body_mass_index}}</td>
+                    </tr><tr>
+                        <th scope="row" class="col-lg-2 text-center">Blood Pressure Systolic</th>
+                        <td class="text-center col-lg-3">{{form.blood_pressure_systolic}}</td>
+                    </tr><tr>
+                        <th scope="row" class="col-lg-2 text-center">Blood Pressure Diastolic</th>
+                        <td class="text-center col-lg-3">{{form.blood_pressure_diastolic}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

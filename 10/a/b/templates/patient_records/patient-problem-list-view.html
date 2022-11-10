@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}problem-list-view{% endblock title %}
+{% block content %}
+
+<div class="container mt-4">
+    <h3 class="text-center mb-4">Past History of Illnesses</h3>
+    <div class="col-md-12 search-table-col m-4">
+        <div class="table-responsive table table-hover table-bordered results">
+            <table class="table table-hover table-bordered">
+                <thead class="bill-header cs">
+                    <tr>
+                        <th id="trs-hd-2" class="col-lg-2 text-center">Problem</th>
+                        <th id="trs-hd-3" class="col-lg-2 text-center">Body Site</th>
+                        <th id="trs-hd-1" class="col-lg-2 text-center">Severity</th>
+                        <th id="trs-hd-4" class="col-lg-1 text-center">Onset Date</th>
+                        <th id="trs-hd-5" class="col-lg-1 text-center">Abatement Date</th>
+                        <th id="trs-hd-6" class="col-lg-1 text-center">Dignostic Certainity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tr>
+                        {% for item in problemLists %}
+                            <tr>
+                                <td class="text-center">{{ item.problem }}</td>
+                                <td class="text-center">{{ item.body_site }}</td>
+                                <td class="text-center">{{ item.severity }}</td>
+                                <td class="text-center">{{ item.onset_date }}</td>
+                                <td class="text-center">{{ item.abatement_date }}</td>
+                                <td class="text-center">{{ item.diagnostic_certainty }}</td>
+                            </tr>
+                        {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
